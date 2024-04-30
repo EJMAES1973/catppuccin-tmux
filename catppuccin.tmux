@@ -28,7 +28,7 @@ setw() {
 
 main() {
   local theme
-  theme="$(get_tmux_option "@catppuccin_flavour" "macchiato")"
+  theme="$(get_tmux_option "@catppuccin_flavour" "mocha")"
 
   # Aggregate all commands in one array
   local tmux_commands=()
@@ -41,7 +41,7 @@ main() {
   # status
   set status "on"
   set status-bg "${thm_bg}"
-  set status-justify "left"
+  set status-justify "right"
   set status-left-length "100"
   set status-right-length "100"
 
