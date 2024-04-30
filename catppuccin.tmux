@@ -39,9 +39,9 @@ main() {
   source /dev/stdin <<<"$(sed -e "/^[^#].*=/s/^/local /" "${PLUGIN_DIR}/catppuccin-${theme}.tmuxtheme")"
 
   # status
-  set status "on"
+  set status "off"
   set status-bg "${thm_bg}"
-  set status-justify "right"
+  set status-justify "left"
   set status-left-length "100"
   set status-right-length "100"
 
