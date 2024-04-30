@@ -39,7 +39,7 @@ main() {
   source /dev/stdin <<<"$(sed -e "/^[^#].*=/s/^/local /" "${PLUGIN_DIR}/catppuccin-${theme}.tmuxtheme")"
 
   # status
-  set status "off"
+  set status "on"
   set status-bg "${thm_bg}"
   set status-justify "left"
   set status-left-length "100"
@@ -70,7 +70,7 @@ main() {
   readonly right_separator
 
   local left_separator
-  left_separator="$(get_tmux_option "@catppuccin_left_separator" "")"
+  left_separator="$(get_tmux_option "@catppuccin_left_separator" "")"
   readonly left_separator
 
   local user
