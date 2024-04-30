@@ -146,7 +146,7 @@ main() {
     right_column2=$right_column2$show_host
   fi
 
-  if [[ "${date_time}" != "off" ]]; then
+  if [[ "${date_time}" != "on" ]]; then
     right_column2=$right_column2$show_date_time
   fi
 
