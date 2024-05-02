@@ -38,7 +38,7 @@ main() {
   # shellcheck source=catppuccin-frappe.tmuxtheme
   source /dev/stdin <<<"$(sed -e "/^[^#].*=/s/^/local /" "${PLUGIN_DIR}/catppuccin-${theme}.tmuxtheme")"
 
-  # status
+  # status -> This is the actual status bar at the bottom of the window.
   set status "on"
   set status-bg "${thm_bg}"
   set status-justify "left"
@@ -46,14 +46,14 @@ main() {
   set status-right-length "100"
 
   # messages
-  set message-style "fg=${thm_cyan},bg=${thm_gray},align=centre"
-  set message-command-style "fg=${thm_cyan},bg=${thm_gray},align=centre"
+  set message-style "fg=${thm_cyan},bg=${thm_gray},align=centre" # Ctrl+Space + : messages
+  set message-command-style "fg=${thm_cyan},bg=${thm_gray},align=centre" # Unknown
 
-  # panes
+  # panes -> As stated, one is active and the other is inactive.
   set pane-border-style "fg=${thm_gray}"
   set pane-active-border-style "fg=${thm_blue}"
 
-  # windows
+  # windows -> Unknown
   setw window-status-activity-style "fg=${thm_fg},bg=${thm_bg},none"
   setw window-status-separator ""
   setw window-status-style "fg=${thm_fg},bg=${thm_bg},none"
@@ -70,7 +70,7 @@ main() {
   readonly right_separator
 
   local left_separator
-  left_separator="$(get_tmux_option "@catppuccin_left_separator" "")"
+  left_separator="$(get_tmux_option "@catppuccin_left_separator" "")"
   readonly left_separator
 
   local user
@@ -90,7 +90,7 @@ main() {
   readonly show_directory="#[fg=$thm_pink,bg=$thm_bg,nobold,nounderscore,noitalics]$right_separator#[fg=$thm_bg,bg=$thm_pink,nobold,nounderscore,noitalics]  #[fg=$thm_fg,bg=$thm_gray] #{b:pane_current_path} #{?client_prefix,#[fg=$thm_red]"
 
   local show_window
-  readonly show_window="#[fg=$thm_pink,bg=$thm_bg,nobold,nounderscore,noitalics]$right_separator#[fg=$thm_bg,bg=$thm_pink,nobold,nounderscore,noitalics] #[fg=$thm_fg,bg=$thm_gray] #W #{?client_prefix,#[fg=$thm_red]"
+  readonly show_window="#[fg=$thm_pink,bg=$thm_bg,nobold,nounderscore,noitalics]$right_separator#[fg=$thm_bg,bg=$thm_pink,nobold,nounderscore,noitalics] #[fg=$thm_fg,bg=$thm_gray] #W #U@#H #{?client_prefix,#[fg=$thm_red]"
 
   local show_session
   readonly show_session="#[fg=$thm_green]}#[bg=$thm_gray]$right_separator#{?client_prefix,#[bg=$thm_red],#[bg=$thm_green]}#[fg=$thm_bg] #[fg=$thm_fg,bg=$thm_gray] #S "
